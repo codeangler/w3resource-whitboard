@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<input type="text" id="input">
+<input type="button" value="Find BigWord" onclick="findBigWord()">
+
+<script>
+const findBigWord = () => {
+let input = document.getElementById('input').value.split(' ');
+let lengthArr = input.map(x => x.length); // create array of lengths
+let bigWL = Math.max(...lengthArr); // return only max of new array
+let lengthyWord = input[lengthArr.indexOf(bigWL)]; // set lengthy words to 
+alert(lengthyWord)
+};
+
+</script>
+</body>
+</html>
