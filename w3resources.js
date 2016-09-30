@@ -1,14 +1,66 @@
-//"use strict" // permits es6 in node
+"use strict"; // permits es6 in node
 // const total = [ 0, 1, 2, 3 ].reduce( ( acc, cur ) => acc + cur, 0 );
 // console.log(total)
 
+((str) => {console.log(str)})("something"); // ### ES6 build works. Need to ';' after 'use strict' but works in chrome dev tools
 
-/* . Write a JavaScript program to convert temperatures to and from celsius, fahrenheit. Go to the editor
+
+// 8. Write a JavaScript function that accepts a number as a parameter and check the number is prime or not. Go to the editor
+// Note : A prime number (or a prime) is a natural number greater than 1 that has no positive divisors other than 1 and itself.
+
+// 9. Write a JavaScript function which accepts an argument and returns the type. Go to the editor
+// Note : There are six possible values that typeof returns: object, boolean, function, number, string, and undefined.
+
+// 10. Write a JavaScript function which returns the n rows by n columns identity matrix. Go to the editor
+
+// 11. Write a JavaScript function which will take an array of numbers stored and find the second lowest and second greatest numbers, respectively. Go to the editor
+// Sample array : [1,2,3,4,5]
+// Expected Output : 2,4 
+
+// 12. Write a JavaScript function which says whether a number is perfect. Go to the editor
+// According to Wikipedia : In number theory, a perfect number is a positive integer that is equal to the sum of its proper positive divisors, that is, the sum of its positive divisors excluding the number itself (also known as its aliquot sum). Equivalently, a perfect number is a number that is half the sum of all of its positive divisors (including itself).
+// Example : The first perfect number is 6, because 1, 2, and 3 are its proper positive divisors, and 1 + 2 + 3 = 6. Equivalently, the number 6 is equal to half the sum of all its positive divisors: ( 1 + 2 + 3 + 6 ) / 2 = 6. The next perfect number is 28 = 1 + 2 + 4 + 7 + 14. This is followed by the perfect numbers 496 and 8128.
+
+
+// 7. Write a JavaScript function that accepts a string as a parameter and counts the number of vowels within the string. Go to the editor
+// Note : As the letter 'y' can be regarded as both a vowel and a consonant, we do not count 'y' as vowel here. 
+// Example string : 'The quick brown fox' 
+// Expected Output : 5
+((str) => console.log(
+  str.split('')
+  .reduce( 
+    (prev, current) => {
+      if("aeiouAEIOU".split('').indexOf(current) != -1){
+        return ++prev;
+      } else{ 
+        return prev
+      };
+      },0 ) 
+  ))("The quick brown fox");
+//  NOTE:   prefix incrementor vs postfix incrementor is critical for this to work   ++prev  != prev++
+
+// Basic #12  Write a JavaScript program to get the website URL (loading page).  
+// console.log(window.location.href)
+
+/* Basic #11. Write a JavaScript program to convert temperatures to and from celsius, fahrenheit. Go to the editor
 [ Formula : c/5 = (f-32)/9 [ where c = temperature in celsius and f = temperature in fahrenheit ] 
 Expected Output : 
-60°C is 140 °F
+60°C is 140 °Fp
 45°F is 7.222222222222222°C  */
+// ;(function(){
+//     const temperature = prompt("enter a temperature to convert with it's declaration e.g. '45, f' or '100, c'").split(', ')
+// //     console.log(temperature.split(', '))
+//     switch (temperature[1]){
+//         case "c": const fahrenheit = ((Number(temperature[0])/5)*9) + 32
+//         console.log(`${temperature[0]} celsius, is ${fahrenheit} fahrenheit`)
+//         break;
+//         case "f": const celsius = ((Number(temperature[0])-32/9)*5)
+//         console.log(`${temperature[0]} fahrenheit, is ${celsius} celsius`)
+//         break;
+//         default: console.log('err')
+//     }
 
+// })();
 
 
 //10. write an program to calculate multiplication and division of two numbers (input from user)
@@ -109,7 +161,7 @@ Expected Output :
 
 
   /*
-  Write a JavaScript function that returns a passed string with letters in alphabetical order. Go to the editor
+  JS functions #4 Write a JavaScript function that returns a passed string with letters in alphabetical order. Go to the editor
   Example string : 'webmaster' 
   Expected Output : 'abeemrstw
   */
@@ -121,16 +173,16 @@ Expected Output :
 
 
   // JS Function Problem #3
-  (function(str) {
-    var tempArr = []
-    for (var i = 0; i < str.length; i++) {
-      for (var j = i + 1; j < str.length + 1; j++) {
-         tempArr.push(str.slice(i, j))
-      }
-    }
+  // (function(str) {
+  //   var tempArr = []
+  //   for (var i = 0; i < str.length; i++) {
+  //     for (var j = i + 1; j < str.length + 1; j++) {
+  //        tempArr.push(str.slice(i, j))
+  //     }
+  //   }
 
-    console.log(tempArr.join())
-  })('dog')
+  //   console.log(tempArr.join())
+  // })('dog')
 
 
   // JS  Function Problem #2
