@@ -2,41 +2,129 @@
 // const total = [ 0, 1, 2, 3 ].reduce( ( acc, cur ) => acc + cur, 0 );
 // console.log(total)
 
-((str) => {console.log(str)})("something"); // ### ES6 build works. Need to ';' after 'use strict' but works in chrome dev tools
+// ((str) => {console.log(str)})("something"); // ### ES6 build works. Need to ';' after 'use strict' but works in chrome dev tools
 
-
-// 8. Write a JavaScript function that accepts a number as a parameter and check the number is prime or not. Go to the editor
-// Note : A prime number (or a prime) is a natural number greater than 1 that has no positive divisors other than 1 and itself.
-
-// 9. Write a JavaScript function which accepts an argument and returns the type. Go to the editor
-// Note : There are six possible values that typeof returns: object, boolean, function, number, string, and undefined.
-
-// 10. Write a JavaScript function which returns the n rows by n columns identity matrix. Go to the editor
-
-// 11. Write a JavaScript function which will take an array of numbers stored and find the second lowest and second greatest numbers, respectively. Go to the editor
-// Sample array : [1,2,3,4,5]
-// Expected Output : 2,4 
 
 // 12. Write a JavaScript function which says whether a number is perfect. Go to the editor
 // According to Wikipedia : In number theory, a perfect number is a positive integer that is equal to the sum of its proper positive divisors, that is, the sum of its positive divisors excluding the number itself (also known as its aliquot sum). Equivalently, a perfect number is a number that is half the sum of all of its positive divisors (including itself).
 // Example : The first perfect number is 6, because 1, 2, and 3 are its proper positive divisors, and 1 + 2 + 3 = 6. Equivalently, the number 6 is equal to half the sum of all its positive divisors: ( 1 + 2 + 3 + 6 ) / 2 = 6. The next perfect number is 28 = 1 + 2 + 4 + 7 + 14. This is followed by the perfect numbers 496 and 8128.
 
+()();
+
+// 13. Write a JavaScript function to compute the factors of a positive integer. Go to the editor
+// Click me to see the solution.
+
+// 14. Write a JavaScript function to convert an amount to coins. Go to the editor
+// Sample function : amountTocoins(46, [25, 10, 5, 2, 1])
+// Here 46 is the amount. and 25, 10, 5, 2, 1 are coins. 
+// Output : 25, 10, 10, 1
+// Click me to see the solution.
+
+// 15. Write a JavaScript function to compute the value of bn where n is the exponent and b is the bases. Accept b and n from the user and display the result. Go to the editor
+// Click me to see the solution.
+
+// 16. Write a JavaScript function to extract unique characters from a string. Go to the editor
+// Example string : "thequickbrownfoxjumpsoverthelazydog"
+// Expected Output : "thequickbrownfxjmpsvlazydg"
+// Click me to see the solution.
+
+// 17. Write a JavaScript function to  get the number of occurrences of each letter in specified string. Go to the editor
+// Click me to see the solution.
+
+// 18. Write a function for searching JavaScript arrays with a binary search. Go to the editor
+// Note : A binary search searches by splitting an array into smaller and smaller chunks until it finds the desired value.
+// Click me to see the solution.
+
+// 19. Write a JavaScript function that returns array elements larger than a number. Go to the editor
+// Click me to see the solution.
+
+// 20. Write a JavaScript function that generates a string id (specified length) of random characters. Go to the editor
+// Sample character list : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+// Click me to see the solution.
+
+
+
+
+//  10-05-2016
+
+// 11. Write a JavaScript function which will take an array of numbers stored and find the second lowest and second greatest numbers, respectively. Go to the editor
+// Sample array : [1,2,3,4,5]
+// Expected Output : 2,4 
+
+// first arrange array in sequence.   .filter()?  then reduce?
+// ((arr) => {
+//   let sortedArray = arr.sort((a, b) => a - b)
+//   console.log(`This is the second lowest number ${sortedArray[1]}, and this is the second greatest ${sortedArray[(sortedArray.length-2)]}`);
+// })([421,12342,324,423,15]);
+
+
+// 10. Write a JavaScript function which returns the n rows by n columns identity matrix. Go to the editor
+// ((n) => {
+//   let matrix = []
+//   for(let i = 0; i < n; i++){
+//     matrix.push([])
+//     for (let j = 0; j < n; j++){
+//       let x;
+//         (i == j ? x = 1 : x = 0);
+//         matrix[i].push(x);
+
+//     }
+//   }
+//   console.log(matrix.join('\n'))
+// })(3);
+
+// let identityMatrix = [[1,0,0],[0,1,0],[0,0,1]]
+// console.log(identityMatrix.join("\n"));
+
+// console.log("");
+
+// refactor answer from Ron Rieger
+// function identityMatrix(size){
+//   var r = new Array(size);
+//   for(var i = 0; i < size; i++){
+//     r[i] = new Array(size).fill(0);
+//     r[i][i] = 1;
+//   }
+//   return r;
+// }
+
+// console.log(identityMatrix(4));
+
+// 9. Write a JavaScript function which accepts an argument and returns the type. Go to the editor
+// Note : There are six possible values that typeof returns: object, boolean, function, number, string, and undefined.
+
+// ((input) => console.log(typeof(input)))(false)
+
+// 8. Write a JavaScript function that accepts a number as a parameter and check the number is prime or not. Go to the editor
+// Note : A prime number (or a prime) is a natural number greater than 1 that has no positive divisors other than 1 and itself.
+
+// let ultimatePrime = number => {
+//   let sqrt = (Math.floor(Math.sqrt(number)));
+//   if (number === 1)return false;
+//   if (number === 2 || number === 3) return true;
+//   for (let i = 2 ; i < sqrt + 1; i++){
+//     if(number % i === 0) return false
+//   }
+//   return `${number} is prime`
+// }
+
+// console.log(ultimatePrime(37))
 
 // 7. Write a JavaScript function that accepts a string as a parameter and counts the number of vowels within the string. Go to the editor
 // Note : As the letter 'y' can be regarded as both a vowel and a consonant, we do not count 'y' as vowel here. 
 // Example string : 'The quick brown fox' 
 // Expected Output : 5
-((str) => console.log(
-  str.split('')
-  .reduce( 
-    (prev, current) => {
-      if("aeiouAEIOU".split('').indexOf(current) != -1){
-        return ++prev;
-      } else{ 
-        return prev
-      };
-      },0 ) 
-  ))("The quick brown fox");
+// ((str) => console.log(
+//   str.split('')
+//   .reduce( 
+//     (prev, current) => {
+//       if("aeiouAEIOU".split('').indexOf(current) != -1){
+//         return ++prev;
+//       } else{ 
+//         return prev
+//       };
+//       },0 ) 
+//   ))("The quick brown fox");
 //  NOTE:   prefix incrementor vs postfix incrementor is critical for this to work   ++prev  != prev++
 
 // Basic #12  Write a JavaScript program to get the website URL (loading page).  
