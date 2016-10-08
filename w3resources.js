@@ -39,6 +39,11 @@
 // 13. Write a JavaScript function to compute the factors of a positive integer. Go to the editor
 // Click me to see the solution.
 
+var N = 10; 
+var output = Array.apply(null, {length: N + 1}).map(Number.call, Number).filter(function(e){if(N % e === 0){ return e}})
+
+console.log(output);
+
 // let positiveInteger = (num) => {
 //   let arr = new Array();
 //   for(let i = 1; i < num +1; i ++){
