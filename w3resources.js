@@ -5,12 +5,71 @@
 // ((str) => {console.log(str)})("something"); // ### ES6 build works. Need to ';' after 'use strict' but works in chrome dev tools
 
 
-
+// 10-10-2016
 // 14. Write a JavaScript function to convert an amount to coins. Go to the editor
 // Sample function : amountTocoins(46, [25, 10, 5, 2, 1])
 // Here 46 is the amount. and 25, 10, 5, 2, 1 are coins. 
 // Output : 25, 10, 10, 1
-// Click me to see the solution.
+
+let coins = {
+    'quarters': 25,
+    'dimes': 10,
+    'nickels': 5,
+    'pennies': 1
+}
+var amountToCoins = function(amt, coins) {
+    // console.log(coins)
+    let changeReturn = {
+        'quarters': 0,
+        'dimes': 0,
+        'nickels': 0,
+        'pennies': 0,
+        // addCoin : function(coin){
+        //   changeReturn[coin] = changeReturn[coin] ++;
+        // }
+    };
+    let amtRemaining = amt;
+    for (var coin in coins) {
+        for (let i = 0; i < amt; i++) {
+            console.log(i)
+            if (coins[coin] <= amtRemaining) {
+                // console.log(coin)
+                switch (coin) {
+                    case "quarters":
+                        // console.log('you added a quarter');
+                        amtRemaining -= coins[coin];
+                        changeReturn[coin]++;
+                        break;
+
+                    case "dimes":
+                        // console.log('you added a dime');
+                        amtRemaining -= coins[coin];
+                        changeReturn[coin]++;
+                        break;
+
+                    case "nickels":
+                        // console.log('you added a nickel');
+                        amtRemaining -= coins[coin];
+                        changeReturn[coin]++;
+                        break;
+
+                    case "pennies":
+                        // console.log('you added a penny');
+                        amtRemaining -= coins[coin];
+                        changeReturn[coin]++;
+                        break;
+
+                    default:
+                        console.log('something in default')
+                }
+            }
+            
+        }
+    }
+  return(changeReturn)
+};
+
+console.log(amountToCoins(43, coins))
 
 // 15. Write a JavaScript function to compute the value of bn where n is the exponent and b is the bases. Accept b and n from the user and display the result. Go to the editor
 // Click me to see the solution.
@@ -39,10 +98,10 @@
 // 13. Write a JavaScript function to compute the factors of a positive integer. Go to the editor
 // Click me to see the solution.
 
-var N = 10; 
-var output = Array.apply(null, {length: N + 1}).map(Number.call, Number).filter(function(e){if(N % e === 0){ return e}})
+// var N = 10; 
+// var output = Array.apply(null, {length: N + 1}).map(Number.call, Number).filter(function(e){if(N % e === 0){ return e}})
 
-console.log(output);
+// console.log(output);
 
 // let positiveInteger = (num) => {
 //   let arr = new Array();
@@ -190,144 +249,144 @@ Expected Output :
 
 //10. write an program to calculate multiplication and division of two numbers (input from user)
 
-  // var a = prompt('Enter a number');
-  // var b = prompt('Enter a number');
+// var a = prompt('Enter a number');
+// var b = prompt('Enter a number');
 
-  // var confirm = confirm("Ok to Multiply; Cancel for division")
-  // if (confirm) {
+// var confirm = confirm("Ok to Multiply; Cancel for division")
+// if (confirm) {
 
-  //   console.log(a * b)
+//   console.log(a * b)
 
-  // } else {
-  //   console.log(a / b)
-  // }
+// } else {
+//   console.log(a / b)
+// }
 
-  // 9. basic calculate days left until christmas
-  // let thisMoment = new Date()
-  // let xMas = new Date(thisMoment.getFullYear(), 11, 25)
-  // let _msPerDay = 24*60*60*1000;
-  // let _daysTilXmas = (thisMoment < xMas)? console.log( Math.round( ( xMas.getTime() - thisMoment.getTime() ) / _msPerDay )): console.log("better luck next year")
-  // if (thisMoment < xMas) { 
-  //   let daysToGo = (xMas.getTime() - thisMoment.getTime())/ _msPerDay
-  //   console.log(Math.round(daysToGo));
-  //  } else { 
-  //   console.log(thisMoment) 
-  // }
-
-
-
-  /* 8. Write a JavaScript program where the program takes a random integer between 1 to 10, 
-  the user is then prompted to input a guess number. If the user input matches with guess number, 
-  the program will display a message "Good Work" otherwise display a message "Not matched". 
-
-  // const userinput = 7; // prompt("Guess a number betten 1-10")
-  // let thisTime = Math.floor(Math.random()* 10 +1 );
-  // console.log(thisTime)
-  // if (userinput === thisTime) {console.log("Good Work")} else {console.log('Not Matched')}
+// 9. basic calculate days left until christmas
+// let thisMoment = new Date()
+// let xMas = new Date(thisMoment.getFullYear(), 11, 25)
+// let _msPerDay = 24*60*60*1000;
+// let _daysTilXmas = (thisMoment < xMas)? console.log( Math.round( ( xMas.getTime() - thisMoment.getTime() ) / _msPerDay )): console.log("better luck next year")
+// if (thisMoment < xMas) { 
+//   let daysToGo = (xMas.getTime() - thisMoment.getTime())/ _msPerDay
+//   console.log(Math.round(daysToGo));
+//  } else { 
+//   console.log(thisMoment) 
+// }
 
 
-  /* basic 7. Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050. */
 
-  // var Sundays = []
-  // var year = 2014
+/* 8. Write a JavaScript program where the program takes a random integer between 1 to 10, 
+the user is then prompted to input a guess number. If the user input matches with guess number, 
+the program will display a message "Good Work" otherwise display a message "Not matched". 
 
-  // // While date is <= 2050  i++
-  // while(year <= 2050){
-  //   var testDate = new Date(year,0,1);
-  //   var weekday = testDate.getDay();
-
-  //   if (weekday === 0){
-  //     Sundays.push(testDate.getFullYear())
-  //   }
-  //   year ++
-  // }
-  // console.lowg(Sundays)
-
-  // #6 basic   test for leap year
-  // let year = 1992
-  // let x = (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
-  // console.log(x);
-
-  /* 6. Write a JavaScript function that accepts a string as a parameter and find the longest word within the string. Go to the editor
-  Example string : 'Web Development Tutorial' 
-  Expected Output : 'Development' */
-
-  // let longword = (str) => str.split(' ').reduce(function(prev, curr, i, arr) { if (prev.length < curr.length) {return curr } else {return prev}
-  // }, "")
-  // console.log(longestWord('this is sentence with different length words'))
-  /*
-  5. Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word of the string in upper case. Go to the editor
-  Example string : 'the quick brown fox' 
-  Expected Output : 'The Quick Brown Fox '
-  */
-  // (function(str) {
-  //   var upperFirst = str.split(' ').map(function(e) {return (e[0].toUpperCase() + e.slice(1))}).join(" ")
-  //   console.log(upperFirst)
-  // }('the quikc brown fox'))
-
-  // someone else's response
-  // (function() {
-  //   var given = "edcbahklahflakjsdhfjwhgerjhj";
-  //   var splitted = given.split("");
-  //   var bigger, smaller = "";
-
-  //   for (i = 0; i < splitted.length; i++) {
-  //     for (j = 0; j < splitted.length; j++) {
-  //       if (splitted[i] > splitted[i + j]) {
-  //         bigger = splitted[i];
-  //         smaller = splitted[i + j];
-  //         splitted[i + j] = bigger;
-  //         splitted[i] = smaller;
-  //       }
-  //     }
-  //   }
-  //   console.log(splitted.join(''))
-  // })()
+// const userinput = 7; // prompt("Guess a number betten 1-10")
+// let thisTime = Math.floor(Math.random()* 10 +1 );
+// console.log(thisTime)
+// if (userinput === thisTime) {console.log("Good Work")} else {console.log('Not Matched')}
 
 
-  /*
-  JS functions #4 Write a JavaScript function that returns a passed string with letters in alphabetical order. Go to the editor
-  Example string : 'webmaster' 
-  Expected Output : 'abeemrstw
-  */
+/* basic 7. Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050. */
 
-  // (function(str) {
-  //   var tempArr = str.split('').sort().join('');
-  //   console.log(tempArr)
-  // })("webmaster")
+// var Sundays = []
+// var year = 2014
+
+// // While date is <= 2050  i++
+// while(year <= 2050){
+//   var testDate = new Date(year,0,1);
+//   var weekday = testDate.getDay();
+
+//   if (weekday === 0){
+//     Sundays.push(testDate.getFullYear())
+//   }
+//   year ++
+// }
+// console.lowg(Sundays)
+
+// #6 basic   test for leap year
+// let year = 1992
+// let x = (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
+// console.log(x);
+
+/* 6. Write a JavaScript function that accepts a string as a parameter and find the longest word within the string. Go to the editor
+Example string : 'Web Development Tutorial' 
+Expected Output : 'Development' */
+
+// let longword = (str) => str.split(' ').reduce(function(prev, curr, i, arr) { if (prev.length < curr.length) {return curr } else {return prev}
+// }, "")
+// console.log(longestWord('this is sentence with different length words'))
+/*
+5. Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word of the string in upper case. Go to the editor
+Example string : 'the quick brown fox' 
+Expected Output : 'The Quick Brown Fox '
+*/
+// (function(str) {
+//   var upperFirst = str.split(' ').map(function(e) {return (e[0].toUpperCase() + e.slice(1))}).join(" ")
+//   console.log(upperFirst)
+// }('the quikc brown fox'))
+
+// someone else's response
+// (function() {
+//   var given = "edcbahklahflakjsdhfjwhgerjhj";
+//   var splitted = given.split("");
+//   var bigger, smaller = "";
+
+//   for (i = 0; i < splitted.length; i++) {
+//     for (j = 0; j < splitted.length; j++) {
+//       if (splitted[i] > splitted[i + j]) {
+//         bigger = splitted[i];
+//         smaller = splitted[i + j];
+//         splitted[i + j] = bigger;
+//         splitted[i] = smaller;
+//       }
+//     }
+//   }
+//   console.log(splitted.join(''))
+// })()
 
 
-  // JS Function Problem #3
-  // (function(str) {
-  //   var tempArr = []
-  //   for (var i = 0; i < str.length; i++) {
-  //     for (var j = i + 1; j < str.length + 1; j++) {
-  //        tempArr.push(str.slice(i, j))
-  //     }
-  //   }
+/*
+JS functions #4 Write a JavaScript function that returns a passed string with letters in alphabetical order. Go to the editor
+Example string : 'webmaster' 
+Expected Output : 'abeemrstw
+*/
 
-  //   console.log(tempArr.join())
-  // })('dog')
-
-
-  // JS  Function Problem #2
-  // (function reverse(str) {
-  //   var fwd = str.split('').filter(function(e) {
-  //     return e !== " " }).join('')
-  //   var rev = fwd.split('').reverse().join('')
-  //   console.log(fwd, rev)
-  // })('what is happening');
-
-  // (function descructive(str) {
-  //   var fwd = str.split('').filter(function(e) {
-  //     return e !== " " })
-  //   var rev = fwd.reverse().join('')
-  //   console.log(fwd.join(''), rev)
-  // })('what is happening')
+// (function(str) {
+//   var tempArr = str.split('').sort().join('');
+//   console.log(tempArr)
+// })("webmaster")
 
 
-  // js functions # 1
-  // (function(num){
-  //   var r = num.toString().split('').reverse().join('')
-  //   console.log(Number(r))
-  // })(3457)
+// JS Function Problem #3
+// (function(str) {
+//   var tempArr = []
+//   for (var i = 0; i < str.length; i++) {
+//     for (var j = i + 1; j < str.length + 1; j++) {
+//        tempArr.push(str.slice(i, j))
+//     }
+//   }
+
+//   console.log(tempArr.join())
+// })('dog')
+
+
+// JS  Function Problem #2
+// (function reverse(str) {
+//   var fwd = str.split('').filter(function(e) {
+//     return e !== " " }).join('')
+//   var rev = fwd.split('').reverse().join('')
+//   console.log(fwd, rev)
+// })('what is happening');
+
+// (function descructive(str) {
+//   var fwd = str.split('').filter(function(e) {
+//     return e !== " " })
+//   var rev = fwd.reverse().join('')
+//   console.log(fwd.join(''), rev)
+// })('what is happening')
+
+
+// js functions # 1
+// (function(num){
+//   var r = num.toString().split('').reverse().join('')
+//   console.log(Number(r))
+// })(3457)
