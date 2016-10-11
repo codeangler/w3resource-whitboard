@@ -39,19 +39,19 @@
 // 13. Write a JavaScript function to compute the factors of a positive integer. Go to the editor
 // Click me to see the solution.
 
-// let positiveInteger = (num) => {
-//   let arr = new Array();
-//   for(let i = 1; i < num +1; i ++){
-//     if(num % i === 0){
-//       arr.push(i);
-//     }
-//   }
-//   return arr
-// }
+let positiveInteger = (num) => {
+  let arr = new Array();
+  for(let i = 1; i < num +1; i ++){
+    if(num % i === 0){
+      arr.push(i);
+    }
+  }
+  return arr
+}
 
-// console.log(positiveInteger(12))
-// console.log(positiveInteger(15))
-// console.log(positiveInteger(17))
+console.log(positiveInteger(12))
+console.log(positiveInteger(15))
+console.log(positiveInteger(17))
 
 // 12. Write a JavaScript function which says whether a number is perfect. Go to the editor
 // According to Wikipedia : In number theory, a perfect number is a positive integer that is equal to the sum of its proper positive divisors, that is, the sum of its positive divisors excluding the number itself (also known as its aliquot sum). Equivalently, a perfect number is a number that is half the sum of all of its positive divisors (including itself).
