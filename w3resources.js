@@ -4,75 +4,22 @@
 
 // ((str) => {console.log(str)})("something"); // ### ES6 build works. Need to ';' after 'use strict' but works in chrome dev tools
 
+// 10.12.2016
 
-// 10-10-2016
-// 14. Write a JavaScript function to convert an amount to coins. Go to the editor
-// Sample function : amountTocoins(46, [25, 10, 5, 2, 1])
-// Here 46 is the amount. and 25, 10, 5, 2, 1 are coins. 
-// Output : 25, 10, 10, 1
-
-let coins = {
-    'quarters': 25,
-    'dimes': 10,
-    'nickels': 5,
-    'pennies': 1
-}
-var amountToCoins = function(amt, coins) {
-    // console.log(coins)
-    let changeReturn = {
-        'quarters': 0,
-        'dimes': 0,
-        'nickels': 0,
-        'pennies': 0,
-        // addCoin : function(coin){
-        //   changeReturn[coin] = changeReturn[coin] ++;
-        // }
-    };
-    let amtRemaining = amt;
-    for (var coin in coins) {
-        for (let i = 0; i < amt; i++) {
-            console.log(i)
-            if (coins[coin] <= amtRemaining) {
-                // console.log(coin)
-                switch (coin) {
-                    case "quarters":
-                        // console.log('you added a quarter');
-                        amtRemaining -= coins[coin];
-                        changeReturn[coin]++;
-                        break;
-
-                    case "dimes":
-                        // console.log('you added a dime');
-                        amtRemaining -= coins[coin];
-                        changeReturn[coin]++;
-                        break;
-
-                    case "nickels":
-                        // console.log('you added a nickel');
-                        amtRemaining -= coins[coin];
-                        changeReturn[coin]++;
-                        break;
-
-                    case "pennies":
-                        // console.log('you added a penny');
-                        amtRemaining -= coins[coin];
-                        changeReturn[coin]++;
-                        break;
-
-                    default:
-                        console.log('something in default')
-                }
-            }
-            
-        }
-    }
-  return(changeReturn)
-};
-
-console.log(amountToCoins(43, coins))
 
 // 15. Write a JavaScript function to compute the value of bn where n is the exponent and b is the bases. Accept b and n from the user and display the result. Go to the editor
-// Click me to see the solution.
+function computeExponent(base, n) {
+  return Math.pow(base, n)
+};
+
+function makeMathPow(base, n){
+  return Array.apply(null, {length: n}).fill(base).reduce((prev, current) => {return (prev * current)},1)
+
+};
+
+console.log(computeExponent(7,2));
+console.log(makeMathPow(2, 3));
+
 
 // 16. Write a JavaScript function to extract unique characters from a string. Go to the editor
 // Example string : "thequickbrownfoxjumpsoverthelazydog"
@@ -93,12 +40,77 @@ console.log(amountToCoins(43, coins))
 // Sample character list : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 // Click me to see the solution.
 
+// 10-10-2016
+// 14. Write a JavaScript function to convert an amount to coins. Go to the editor
+// Sample function : amountTocoins(46, [25, 10, 5, 2, 1])
+// Here 46 is the amount. and 25, 10, 5, 2, 1 are coins.
+// Output : 25, 10, 10, 1
+//
+// let coins = {
+//     'quarters': 25,
+//     'dimes': 10,
+//     'nickels': 5,
+//     'pennies': 1
+// }
+// var amountToCoins = function(amt, coins) {
+//     // console.log(coins)
+//     let changeReturn = {
+//         'quarters': 0,
+//         'dimes': 0,
+//         'nickels': 0,
+//         'pennies': 0,
+//         // addCoin : function(coin){
+//         //   changeReturn[coin] = changeReturn[coin] ++;
+//         // }
+//     };
+//     let amtRemaining = amt;
+//     for (var coin in coins) {
+//         for (let i = 0; i < amt; i++) {
+//             // console.log(i)
+//             if (coins[coin] <= amtRemaining) {
+//                 // console.log(coin)
+//                 switch (coin) {
+//                     case "quarters":
+//                         // console.log('you added a quarter');
+//                         amtRemaining -= coins[coin];
+//                         changeReturn[coin]++;
+//                         break;
+//
+//                     case "dimes":
+//                         // console.log('you added a dime');
+//                         amtRemaining -= coins[coin];
+//                         changeReturn[coin]++;
+//                         break;
+//
+//                     case "nickels":
+//                         // console.log('you added a nickel');
+//                         amtRemaining -= coins[coin];
+//                         changeReturn[coin]++;
+//                         break;
+//
+//                     case "pennies":
+//                         // console.log('you added a penny');
+//                         amtRemaining -= coins[coin];
+//                         changeReturn[coin]++;
+//                         break;
+//
+//                     default:
+//                         console.log('something in default')
+//                 }
+//             }
+//
+//         }
+//     }
+//   return(changeReturn)
+// };
+//
+// console.log(amountToCoins(43, coins))
 
 // 10-06-2016
 // 13. Write a JavaScript function to compute the factors of a positive integer. Go to the editor
 // Click me to see the solution.
 
-// var N = 10; 
+// var N = 10;
 // var output = Array.apply(null, {length: N + 1}).map(Number.call, Number).filter(function(e){if(N % e === 0){ return e}})
 
 // console.log(output);
@@ -145,7 +157,7 @@ console.log(amountToCoins(43, coins))
 
 // 11. Write a JavaScript function which will take an array of numbers stored and find the second lowest and second greatest numbers, respectively. Go to the editor
 // Sample array : [1,2,3,4,5]
-// Expected Output : 2,4 
+// Expected Output : 2,4
 
 // first arrange array in sequence.   .filter()?  then reduce?
 // ((arr) => {
@@ -207,28 +219,28 @@ console.log(amountToCoins(43, coins))
 // console.log(ultimatePrime(37))
 
 // 7. Write a JavaScript function that accepts a string as a parameter and counts the number of vowels within the string. Go to the editor
-// Note : As the letter 'y' can be regarded as both a vowel and a consonant, we do not count 'y' as vowel here. 
-// Example string : 'The quick brown fox' 
+// Note : As the letter 'y' can be regarded as both a vowel and a consonant, we do not count 'y' as vowel here.
+// Example string : 'The quick brown fox'
 // Expected Output : 5
 // ((str) => console.log(
 //   str.split('')
-//   .reduce( 
+//   .reduce(
 //     (prev, current) => {
 //       if("aeiouAEIOU".split('').indexOf(current) != -1){
 //         return ++prev;
-//       } else{ 
+//       } else{
 //         return prev
 //       };
-//       },0 ) 
+//       },0 )
 //   ))("The quick brown fox");
 //  NOTE:   prefix incrementor vs postfix incrementor is critical for this to work   ++prev  != prev++
 
-// Basic #12  Write a JavaScript program to get the website URL (loading page).  
+// Basic #12  Write a JavaScript program to get the website URL (loading page).
 // console.log(window.location.href)
 
 /* Basic #11. Write a JavaScript program to convert temperatures to and from celsius, fahrenheit. Go to the editor
-[ Formula : c/5 = (f-32)/9 [ where c = temperature in celsius and f = temperature in fahrenheit ] 
-Expected Output : 
+[ Formula : c/5 = (f-32)/9 [ where c = temperature in celsius and f = temperature in fahrenheit ]
+Expected Output :
 60°C is 140 °Fp
 45°F is 7.222222222222222°C  */
 // ;(function(){
@@ -266,18 +278,18 @@ Expected Output :
 // let xMas = new Date(thisMoment.getFullYear(), 11, 25)
 // let _msPerDay = 24*60*60*1000;
 // let _daysTilXmas = (thisMoment < xMas)? console.log( Math.round( ( xMas.getTime() - thisMoment.getTime() ) / _msPerDay )): console.log("better luck next year")
-// if (thisMoment < xMas) { 
+// if (thisMoment < xMas) {
 //   let daysToGo = (xMas.getTime() - thisMoment.getTime())/ _msPerDay
 //   console.log(Math.round(daysToGo));
-//  } else { 
-//   console.log(thisMoment) 
+//  } else {
+//   console.log(thisMoment)
 // }
 
 
 
-/* 8. Write a JavaScript program where the program takes a random integer between 1 to 10, 
-the user is then prompted to input a guess number. If the user input matches with guess number, 
-the program will display a message "Good Work" otherwise display a message "Not matched". 
+/* 8. Write a JavaScript program where the program takes a random integer between 1 to 10,
+the user is then prompted to input a guess number. If the user input matches with guess number,
+the program will display a message "Good Work" otherwise display a message "Not matched".
 
 // const userinput = 7; // prompt("Guess a number betten 1-10")
 // let thisTime = Math.floor(Math.random()* 10 +1 );
@@ -308,7 +320,7 @@ the program will display a message "Good Work" otherwise display a message "Not 
 // console.log(x);
 
 /* 6. Write a JavaScript function that accepts a string as a parameter and find the longest word within the string. Go to the editor
-Example string : 'Web Development Tutorial' 
+Example string : 'Web Development Tutorial'
 Expected Output : 'Development' */
 
 // let longword = (str) => str.split(' ').reduce(function(prev, curr, i, arr) { if (prev.length < curr.length) {return curr } else {return prev}
@@ -316,7 +328,7 @@ Expected Output : 'Development' */
 // console.log(longestWord('this is sentence with different length words'))
 /*
 5. Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word of the string in upper case. Go to the editor
-Example string : 'the quick brown fox' 
+Example string : 'the quick brown fox'
 Expected Output : 'The Quick Brown Fox '
 */
 // (function(str) {
@@ -346,7 +358,7 @@ Expected Output : 'The Quick Brown Fox '
 
 /*
 JS functions #4 Write a JavaScript function that returns a passed string with letters in alphabetical order. Go to the editor
-Example string : 'webmaster' 
+Example string : 'webmaster'
 Expected Output : 'abeemrstw
 */
 
