@@ -14,8 +14,15 @@ function computeExponent(base, n) {
 
 function makeMathPow(base, n){
   return Array.apply(null, {length: n}).fill(base).reduce((prev, current) => {return (prev * current)},1)
-
 };
+
+// refactor colloboration with senior dev.
+const mathPower = (base, n) => {
+  return Array.apply(null, {length: n})
+  .fill(base)
+  .reduce((prev, curr) => prev * curr, 1);
+}
+console.log(mathPower(3, 3))
 
 console.log(computeExponent(7,2));
 console.log(makeMathPow(2, 3));
