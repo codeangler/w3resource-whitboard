@@ -18,14 +18,14 @@ function makeMathPow(base, n){
 
 // refactor colloboration with senior dev.
 const mathPower = (base, n) => {
-  return Array.apply(null, {length: n})
+  return Array.from({length: n})
   .fill(base)
   .reduce((prev, curr) => prev * curr, 1);
 }
-console.log(mathPower(3, 3))
+console.log(mathPower(3, 7))
 
-console.log(computeExponent(7,2));
-console.log(makeMathPow(2, 3));
+console.log(computeExponent(7,0));
+console.log(makeMathPow(2, 0));
 
 
 // 16. Write a JavaScript function to extract unique characters from a string. Go to the editor
