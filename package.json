@@ -1,0 +1,22 @@
+{
+  "name": "online-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "anjana-Vakil-Learning Func.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeangler/w3resource-whitboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codeangler/w3resource-whitboard/issues"
+  },
+  "homepage": "https://github.com/codeangler/w3resource-whitboard#readme",
+  "devDependencies": {
+    "eslint-config-rallycoding": "^3.1.0"
+  }
+}

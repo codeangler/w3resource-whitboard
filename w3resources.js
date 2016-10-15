@@ -31,10 +31,17 @@ console.log(makeMathPow(2, 0));
 // 16. Write a JavaScript function to extract unique characters from a string. Go to the editor
 // Example string : "thequickbrownfoxjumpsoverthelazydog"
 // Expected Output : "thequickbrownfxjmpsvlazydg"
-// Click me to see the solution.
+var removeCharacter = (str, remove) => {
+  return str.split('')
+  .filter(function( e, i, arr ){ if(e !== remove){ return true} })
+  .join('');
+};
+
+console.log(removeCharacter('something', 'o'))
 
 // 17. Write a JavaScript function to  get the number of occurrences of each letter in specified string. Go to the editor
-// Click me to see the solution.
+
+
 
 // 18. Write a function for searching JavaScript arrays with a binary search. Go to the editor
 // Note : A binary search searches by splitting an array into smaller and smaller chunks until it finds the desired value.
