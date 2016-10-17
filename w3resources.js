@@ -6,42 +6,56 @@
 
 // 10.12.2016
 
-
 // 15. Write a JavaScript function to compute the value of bn where n is the exponent and b is the bases. Accept b and n from the user and display the result. Go to the editor
-function computeExponent(base, n) {
-  return Math.pow(base, n)
-};
+// function computeExponent(base, n) {
+//   return Math.pow(base, n)
+// };
 
-function makeMathPow(base, n){
-  return Array.apply(null, {length: n}).fill(base).reduce((prev, current) => {return (prev * current)},1)
-};
+// function makeMathPow(base, n){
+//   return Array.apply(null, {length: n}).fill(base).reduce((prev, current) => {return (prev * current)},1)
+// };
 
-// refactor colloboration with senior dev.
-const mathPower = (base, n) => {
-  return Array.from({length: n})
-  .fill(base)
-  .reduce((prev, curr) => prev * curr, 1);
-}
-console.log(mathPower(3, 7))
+// // refactor colloboration with senior dev.
+// const mathPower = (base, n) => {
+//   return Array.from({length: n})
+//   .fill(base)
+//   .reduce((prev, curr) => prev * curr, 1);
+// }
+// console.log(mathPower(3, 7))
 
-console.log(computeExponent(7,0));
-console.log(makeMathPow(2, 0));
+// console.log(computeExponent(7,0));
+// console.log(makeMathPow(2, 0));
 
 
 // 16. Write a JavaScript function to extract unique characters from a string. Go to the editor
 // Example string : "thequickbrownfoxjumpsoverthelazydog"
 // Expected Output : "thequickbrownfxjmpsvlazydg"
-var removeCharacter = (str, remove) => {
-  return str.split('')
-  .filter(function( e, i, arr ){ if(e !== remove){ return true} })
-  .join('');
-};
+// var removeCharacter = (str, remove) => {
+//   return str.split('')
+//   .filter(function( e, i, arr ){ if(e !== remove){ return true} })
+//   .join('');
+// };
 
-console.log(removeCharacter('something', 'o'))
+// console.log(removeCharacter('something', 'o'))
 
-// 17. Write a JavaScript function to  get the number of occurrences of each letter in specified string. Go to the editor
+// 17. Write a JavaScript function to  get the number of occurrences of each letter in specified string. 
+const frequenyOfLetter = str => {
+  let output = {};
+  const temp = str
+    .toLowerCase()
+    .split('')
+    .forEach((e, i, arr) => {
+      if(!output[e]) {
+        output[e] = 1;
+      }
+      if(output[e]) {
+        output[e]++;
+      }
+  });
+  return output;
+}
 
-
+console.log(frequenyOfLetter('the QUICK brown call'))
 
 // 18. Write a function for searching JavaScript arrays with a binary search. Go to the editor
 // Note : A binary search searches by splitting an array into smaller and smaller chunks until it finds the desired value.
