@@ -4,6 +4,68 @@
 
 // ((str) => {console.log(str)})("something"); // ### ES6 build works. Need to ';' after 'use strict' but works in chrome dev tools
 
+// 18. Write a function for searching JavaScript arrays with a binary search. Go to the editor
+// Note : A binary search searches by splitting an array into smaller and smaller chunks until it finds the desired value.
+
+// 19. Write a JavaScript function that returns array elements larger than a number. Go to the editor
+const arrayObject = {
+  'a' : [3,46,56,374,26],
+  'b' : [6,25,7,132,45,5486],
+  'c' : [5,6,7,3,2,6,8],
+  'd' : [1, 3],
+  'e' : [52]
+}
+
+const minimumLengthArrayFilter = function ( obj, num) {
+  let output = []
+  // for(let p in obj) {
+  //   output.push(obj.p)
+  // }
+  let x = Object
+          .keys(obj)
+          .forEach((e, i, arr) => {
+            if(obj[e].length >= num){
+              output.push(obj[e])
+            }
+          })
+
+  return output;
+  
+}
+console.log(minimumLengthArrayFilter(arrayObject, 4))
+// 20. Write a JavaScript function that generates a string id (specified length) of random characters. Go to the editor
+// Sample character list : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+
+// 17. Write a JavaScript function to  get the number of occurrences of each letter in specified string. 
+// const frequenyOfLetter = str => {
+//   let output = {};
+//   const temp = str
+//     .toLowerCase()
+//     .split('')
+//     .forEach((e, i, arr) => {
+//       if(!output[e]) {
+//         output[e] = 1;
+//       }
+//       if(output[e]) {
+//         output[e]++;
+//       }
+//   });
+//   return output;
+// }
+
+// console.log(frequenyOfLetter('the QUICK brown call'))
+
+// 16. Write a JavaScript function to extract unique characters from a string. Go to the editor
+// Example string : "thequickbrownfoxjumpsoverthelazydog"
+// Expected Output : "thequickbrownfxjmpsvlazydg"
+
+// var removeCharacter = (str, remove) => {
+//   return str.split('')
+//   .filter(function( e, i, arr ){ if(e !== remove){ return true} })
+//   .join('');
+// };
+
+// console.log(removeCharacter('something', 'o'))
 // 10.12.2016
 
 // 15. Write a JavaScript function to compute the value of bn where n is the exponent and b is the bases. Accept b and n from the user and display the result. Go to the editor
@@ -25,49 +87,6 @@
 
 // console.log(computeExponent(7,0));
 // console.log(makeMathPow(2, 0));
-
-
-// 16. Write a JavaScript function to extract unique characters from a string. Go to the editor
-// Example string : "thequickbrownfoxjumpsoverthelazydog"
-// Expected Output : "thequickbrownfxjmpsvlazydg"
-// var removeCharacter = (str, remove) => {
-//   return str.split('')
-//   .filter(function( e, i, arr ){ if(e !== remove){ return true} })
-//   .join('');
-// };
-
-// console.log(removeCharacter('something', 'o'))
-
-// 17. Write a JavaScript function to  get the number of occurrences of each letter in specified string. 
-const frequenyOfLetter = str => {
-  let output = {};
-  const temp = str
-    .toLowerCase()
-    .split('')
-    .forEach((e, i, arr) => {
-      if(!output[e]) {
-        output[e] = 1;
-      }
-      if(output[e]) {
-        output[e]++;
-      }
-  });
-  return output;
-}
-
-console.log(frequenyOfLetter('the QUICK brown call'))
-
-// 18. Write a function for searching JavaScript arrays with a binary search. Go to the editor
-// Note : A binary search searches by splitting an array into smaller and smaller chunks until it finds the desired value.
-// Click me to see the solution.
-
-// 19. Write a JavaScript function that returns array elements larger than a number. Go to the editor
-// Click me to see the solution.
-
-// 20. Write a JavaScript function that generates a string id (specified length) of random characters. Go to the editor
-// Sample character list : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-// Click me to see the solution.
-
 // 10-10-2016
 // 14. Write a JavaScript function to convert an amount to coins. Go to the editor
 // Sample function : amountTocoins(46, [25, 10, 5, 2, 1])
